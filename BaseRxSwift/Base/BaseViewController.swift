@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import NVActivityIndicatorView
 
-public class BaseViewController: UIViewController {
+open class BaseViewController: UIViewController {
     
     internal let disposeBag = DisposeBag()
     internal var activityData = ActivityData()
@@ -25,7 +25,7 @@ public class BaseViewController: UIViewController {
         return refreshControl
     }()
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         setupViewModel()
         setupView()
@@ -33,28 +33,28 @@ public class BaseViewController: UIViewController {
         setupMultiLanguage()
     }
     
-    internal func setupView() {
+    open func setupView() {
         
     }
     
-    internal func setupRx() {
+    open func setupRx() {
         
     }
     
-    internal func setupViewModel() {
+    open func setupViewModel() {
         
     }
     
-    internal func setupMultiLanguage() {
+    open func setupMultiLanguage() {
         
     }
     
     @objc
-    internal func handleRefresh(_ refreshControl: UIRefreshControl) {
+    open func handleRefresh(_ refreshControl: UIRefreshControl) {
         
     }
     
-    func showAlert(message: String,
+    open func showAlert(message: String,
                    title: String? = "",
                    cancel: String = "Cancel",
                    otherButtons: [String] = [],
@@ -71,7 +71,7 @@ public class BaseViewController: UIViewController {
         self.present(alertVC, animated: true, completion: nil)
     }
     
-    func addLoadingIndicator(_ indicator: ActivityIndicator) {
+    open func addLoadingIndicator(_ indicator: ActivityIndicator) {
         indicator
             .asObservable()
             .observeOn(MainScheduler.instance)
@@ -89,7 +89,7 @@ public class BaseViewController: UIViewController {
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData, nil)
     }
     
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         let className = String(describing: self).components(separatedBy: ".").last ?? ""
         Log.debug(message: className + "didReceiveMemoryWarning")

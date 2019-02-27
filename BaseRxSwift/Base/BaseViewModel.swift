@@ -9,8 +9,10 @@
 import Foundation
 import RxSwift
 
-public class BaseViewModel {
-    let activityIndicator = ActivityIndicator()
-    internal var disposeBag = DisposeBag()
+open class BaseViewModel {
+    public let activityIndicator = ActivityIndicator()
+    open var disposeBag = DisposeBag()
+    
+    public init() {}
 }
 

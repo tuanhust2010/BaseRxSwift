@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BaseModel: NSObject {
+open class BaseModel: NSObject {
     
     private var ignoresParams: [String] = []
     
@@ -39,11 +39,11 @@ public class BaseModel: NSObject {
         return params
     }
     
-    func setIgnores(params: [String]) {
+    open func setIgnores(params: [String]) {
         ignoresParams = params
     }
     
-    func exportParams() -> [String: Any] {
+    open func exportParams() -> [String: Any] {
         return listPropertiesWithValues()
     }
     
@@ -51,7 +51,7 @@ public class BaseModel: NSObject {
 
 extension BaseModel {
     
-    func validate() -> Bool {
+    open func validate() -> Bool {
         let mirror = Mirror(reflecting: self)
         for attr in mirror.children {
             if let propertyName = attr.label {

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name = 'BaseRxSwift'
-s.version = '0.1.0'
+s.version = '0.1.1'
 s.summary = 'The Base Library'
 s.description = <<-DESC
 The Base Library for RxSwift
