@@ -12,8 +12,8 @@ import NVActivityIndicatorView
 
 open class BaseViewController: UIViewController {
     
-    internal let disposeBag = DisposeBag()
-    internal var activityData = ActivityData()
+    public let disposeBag = DisposeBag()
+    open var activityData = ActivityData()
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
